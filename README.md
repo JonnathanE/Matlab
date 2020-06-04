@@ -1,10 +1,5 @@
-Script principal:
+# Funciones y Ejercicios de Matlab
 
-	ejercicio01.m
+El presente repositorio cuenta con funciones creadas para Matlab.
 
-Funciones creadas:
-
-	showPolinomio.m
-	crecienteAndDecreciente.m
-	biseccion.m
-	raices.m
+Las funciones empiezan con "f"
