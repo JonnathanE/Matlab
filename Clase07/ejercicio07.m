@@ -21,36 +21,23 @@ b = input('Ingrese Maximo (b): ');
 N = input('Ingrese Iteracciones (N): ');
 err = input('Ingrese Error: ');
 
-% operacion de los algoritmos con el PARAMETRO DE ERROR
+% operacion de los algoritmos con el parametro de error
 [trapeciosE, cont01] = freglaTrapeciosError(@ffuncion, a, b, N, err); % Regla de trapecios
 [simpson13E, cont02] = fsimpsonTercioError(@ffuncion,a,b,N,err); % Regla de Simpson 1/3
 [simpson38E, cont03] = fsimpsonTOError(@ffuncion,a,b,N,err); % Regla de Simpson 3/8 (Está limitado a 5 iteraciones)
 
+% Operacion de la regla de Simpson 3/8 sin el parametro de error
+h = (b-a)/N;
+x = a:h:b;
+simpson38 = fsimpsonTO(@ffuncion, x, h);    % Regla de Simpson 3/8 (sin parametro de error)
+
 % Construccion de la tabla
 trapeciosE(2) = cont01;
 simpson13E(2) = cont02;
+simpson38(2) = length(x);
 simpson38E(2) = cont03;
 
-% Operacion de la regla de Simpson 3/8 SIN el parametro de error
-h = (b-a)/N;
-x = a:h:b;
-
-trapecio = freglaTrapecios(@ffuncion,x,h); % Regla de Trapecio
-simpson13 = fsimpsonTercio(@ffuncion, x, h); % Regla de Simpson 1/3
-simpson38 = fsimpsonTO(@ffuncion, x, h);    % Regla de Simpson 3/8 (sin parametro de error)
-
-trapecio(2) = length(x);
-simpson13(2) = length(x);
-simpson38(2) = length(x);
-disp('==============================================================================')
-disp('Algoritmos sin la variable de Error')
-TError = table(trapecio(:), simpson13(:),simpson38(:),... 
-'VariableNames',{'Trapecio','Simpson_1_3','Simpson_3_8'}, ...
-'RowNames',{'Itegral';'Contador'})
-
-disp('==============================================================================')
-disp('Algoritmos con la variable de Error')
-TError = table(trapeciosE(:), simpson13E(:),simpson38E(:),... 
-'VariableNames',{'TrapecioError','Simpson_1_3Error','Simpson_3_8Error'}, ...
+T = table(trapeciosE(:), simpson13E(:),simpson38E(:),simpson38(:),... 
+'VariableNames',{'TrapecioE','Simpson_1_3E','Simpson_3_8E','Simpson_3_8'}, ...
 'RowNames',{'Itegral';'Contador'})
 
