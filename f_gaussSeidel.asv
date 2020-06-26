@@ -1,0 +1,53 @@
+function [x, cont] = f_gaussSeidel(A, b, err)
+% Método de GAUSS SEIDEL para resolver un Sistema de Ecuaciones Lineales a
+% través de matrices.
+%
+%   PARÁMETROS DE ENTRADA
+%       [A]
+
+[numFil, numCol] = size(A);
+[filaB, colB] = size(b);
+
+if numFil == numCol && filaB == numFil% si la matriz 'A' es cuadrática
+    
+    x = zeros(numFil,1);
+    cont = 0;
+    seguir = true;
+    
+    while seguir
+        xerr = x;
+        for i = 1:numFil
+            pivot = A(i,i);
+            suma = 0;
+            for j = 1:numCol
+                if i ~= j
+                    suma = suma + (-1)*A(i,j)*x(j,1);
+                end
+            end
+            suma = suma + b(i);
+            x(i,1) = suma/pivot;
+        end
+        
+        cont = cont + 1;
+        
+        for i = 1:length(x)
+            
+            resErr = abs(x(i)-xerr(i));
+            if resErr <= err
+                seguir = false;
+            end
+            
+        end
+        
+        if cont == 100
+            seguir = false;
+        end
+    end
+    
+else
+    disp('Error:')
+    disp('La matriz no es cuadrática o la matriz b no posee todos los resultados')
+    disp('Recuerde que los dos primeros parámetros deben ser matrices')
+end
+end
+
