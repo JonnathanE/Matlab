@@ -7,15 +7,15 @@ format long
  
 f = @ffuncion; % DECLARO MI FUNCIÓN
 
-a = input('Valor de a: '); % ingreso el valor de x inicial
-b = input('Valor de b: '); % ingreso el valor de x final
-yin = input('Valor de y: '); % ingreso el valor de y inicial
-N = input('Valor de N: '); % ingreso el valor de N
+% a = input('Valor de a: '); % ingreso el valor de x inicial
+% b = input('Valor de b: '); % ingreso el valor de x final
+% yin = input('Valor de y: '); % ingreso el valor de y inicial
+% N = input('Valor de N: '); % ingreso el valor de N
 
-% a = 1;
-% b = 2;
-% yin = 3;
-% N = 30;
+a = 1;
+b = 2;
+yin = 1;%3
+N = 10;%30
 
 % EJECUCIÓN DEL ALGORITMO
 h = (b-a)/N;
@@ -29,4 +29,4 @@ end
 % y
 T = table(x(:),y(:),...
     'VariableNames',{'x','y'})
-plot(T.x, T.y)
+% plot(T.x, T.y) hold on
