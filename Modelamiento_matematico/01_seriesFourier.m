@@ -8,23 +8,24 @@ disp('Function by tranches');
 
 disp('Ejer 2.1');
 f1 = 1; % declare the first function
-f2 = 2; % I declare the second function
-f(x) = piecewise(-3<=x<0, f1, 0<=x<=3, f2);
-Lmin = -3; % Lower limit
-Lmax = 3; % Upper limit
+f2 = -1; % I declare the second function
+f(x) = piecewise(0<=x<pi, f1, pi<=x<=2*pi, f2);
+Lmin = 0; % Lower limit
+Lmax = 2*pi; % Upper limit
 L = Lmax - Lmin; % Period
 [serie03, ao, an, bn] = seriesFourier(f, Lmin, Lmax, L, 50, true); % call the function
 [serie03] = animateFourier(f, Lmin, Lmax, L, 50, true);
 
 disp('Ejer 2.2');
-f1 = x; % declare the first function
-f2 = -x; % I declare the second function
-f(x) = piecewise(-3<=x<0, f1, 0<=x<=3, f2);
-Lmin = -3; % Lower limit
-Lmax = 3; % Upper limit
-L = Lmax - Lmin; % Period
-[serie03, ao, an, bn] = seriesFourier(f, Lmin, Lmax, L, 50, true); % call the function
-[serie03] = animateFourier(f, Lmin, Lmax, L, 50, true);
+% disp('TRIANGULO')
+% f1 = x; % declare the first function
+% f2 = 2 - x; % I declare the second function
+% f(x) = piecewise(0<=x<1, f1, 1<x<=2, f2);
+% Lmin = 0; % Lower limit
+% Lmax = 2; % Upper limit
+% L = Lmax - Lmin; % Period
+% [serie03, ao, an, bn] = seriesFourier(f, Lmin, Lmax, L, 10, true) % call the function
+% [serie03] = animateFourier(f, Lmin, Lmax, L, 10, true);
 
 %disp('Conventional function');
 
