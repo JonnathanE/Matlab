@@ -10,9 +10,9 @@
 
 % FÓRMULA
 %   dT/dt = k(T - TA)
-%   T  -> temperatura del cuerpo en un instante de tiempo t
-%   TA -> temperatura del ambiente constante
-%   k  -> constante de proporcionalidad
+%       T  -> temperatura del cuerpo en un instante de tiempo t
+%       TA -> temperatura del ambiente constante
+%       k  -> constante de proporcionalidad
 
 clc, clear all;
 
@@ -24,8 +24,19 @@ ci = 'T(0) = 100'; % condicion inicial
 T = dsolve(ED, ci, 't'); % Resolucion de la E.D.
 t = 20; % establecemos el tiempo que queremos obtener
 vy = eval(T) % evaluamos
-fplot(T, [0, 30], 'r'); % graficamos
+% graficamos
+hold on
+fplot(T, [0, 200], 'r'); 
+plot(t, vy, '*g');
+title('Ejercicio 07: Ley de Enfriamiento de Newton')
+xlabel('tiempo(min)')
+ylabel('temperatura(°C)')
+leyenda01 = ['T=', char(T)];
+leyenda02 = ['( ' num2str(t) ' , ' num2str(vy) ' )'];
+legend( leyenda01, leyenda02 );
 grid on
+hold off
+
 
 % SEGUNDA FORMA
 % TAin = 25;

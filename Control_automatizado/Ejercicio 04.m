@@ -26,9 +26,9 @@ grid on
 
 % VERIFICAR
 % GRAFICAR CAMPO DE DIRECCIONES
-f = inline('x/y', 'x', 'y');
-iz=-3; paso=0.5; der=3;
-[xcd, ycd] = meshgrid(iz:paso:der, iz:paso:der);
+f = inline('x/y', 'x', 'y')
+iz=-3; paso=1; der=3;
+[xcd, ycd] = meshgrid(iz:paso:der, iz:paso:der)
 [n, m] = size(xcd);
 dx = ones(n,m);
 dy = f(xcd, ycd);

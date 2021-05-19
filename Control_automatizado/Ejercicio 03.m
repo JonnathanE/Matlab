@@ -14,9 +14,9 @@ y = dsolve(ED, ci, 'x'); % Resolucion de la E.D.
 pretty(y)
 
 
-% GRÁFICAR RECTA
+% GRAFICAR RECTA
 x = linspace(-1.8, 1.8, 50); % generacion de un vector con los valores de x
-vy = eval(y); % evaluacion de mi fución y
+vy = eval(y); % evaluacion de mi fución 'y'
 
 hold on % permite superponer los gráficos
 plot(x, vy, 'r') % graficar
