@@ -1,0 +1,44 @@
+% EJERCICIOS DE PROGRAMACIÓN - SCRIPTS EN MATLAB PARA RESOLVER EDO
+%
+%   Autor: Jonnathan Damián Espinoza Erráez
+%   Fecha: 24 de mayo de 2021
+
+% EJERCICIO 01:
+%   xy'=y Condición inicial: y(2)=1
+
+clc, clear all;
+% RESOLVER E.D
+ED = 'Dy = y/x'; % definicion de mi Ecuacion Diferencial
+ci = 'y(2) = 1'; % definicion de mi Condicion Inicial
+y = dsolve(ED, ci, 'x') % Resolucion de la E.D.
+
+% GRAFICAR RECTA
+x = linspace(-3, 8, 15); % generacion de un vector con los valores de x
+vy = eval(y); % evaluacion de mi fución y
+hold on % permite superponer los gráficos
+plot(x, vy, 'r') % graficar
+title('Ejercicio 02')
+xlabel('x')
+ylabel('y')
+grid on
+
+% GRAFICAR CAMPO DE DIRECCIONES
+f = inline('y/x', 'x', 'y');
+iz=-3; paso=0.5; der=3;
+[xcd, ycd] = meshgrid(iz:paso:der, iz:paso:der);
+[n, m] = size(xcd);
+dx = ones(n,m);
+dy = f(xcd, ycd);
+quiver(xcd, ycd, dx, dy)
+% GRAFICAR CONDICION INICIAL
+plot(2, 1, 'og') % grafica los puntos de la condicion inicial
+plot(x, 1)
+legend(['y=', char(y)], 'Campo Direcciones', 'Condición Inicial') % agregar leyenda
+
+hold off
+
+
+
+
+
+
