@@ -1,10 +1,11 @@
-% EJERCICIOS DE PROGRAMACIÓN - SCRIPTS EN MATLAB PARA RESOLVER EDO
+% *EJERCICIOS DE PROGRAMACIÓN - SCRIPTS EN MATLAB PARA RESOLVER EDO*
 %
 %   *Autor:* Jonnathan Damián Espinoza Erráez
 %   *Fecha:* 24 de mayo de 2021
 %
-% EJERCICIO 01:
-%   xy'=y Condición inicial: y(2)=1
+% *EJERCICIO 01:*
+%   $xy'=y$ Condición inicial: $y(2)=1$
+%   
 
 clc, clear all;
 

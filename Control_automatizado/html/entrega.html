@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+    -->
+    <title>ED_Exactas_01_Entrega</title>
+    <meta name="generator" content="MATLAB 9.4">
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <meta name="DC.date" content="2021-05-27">
+    <meta name="DC.source" content="ED_Exactas_01_Entrega.m">
+</head>
+
+<body>
+    <div
+        style="font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #000;line-height: 140%; background: #fff; overflow-y: scroll;">
+        <div>
+            <h1 style="text-align: center;">SCRIPT EN MATLAB DE RESOLUCION DE E.D EXACTA</h1>
+            <span><b>Autor:</b> Jonnathan Damián Espinoza Erráez</span>
+            <br>
+            <span><b>Materia:</b> Control Automatizado Asistido por Computadores</span>
+            <br>
+            <span><b>Fecha: </b> 27 de mayo de 2021</span>
+        </div>
+        <div>
+            <h2>Ejercicio:</h2>
+            <span>(2x+y)dx + (x-3y)dy = 0</span>
+        </div>
+    </div>
+
+    <div class="content" style="font-size: 1.2em; line-height: 140%; padding: 20px;">
+        <h2 style="padding: 0px; margin: 0px 0px 8px; font-family: Arial, Helvetica, sans-serif; font-size: 1.2em; color: #000; font-weight: bold; line-height: 140%; border-bottom: 1px solid #d6d4d4; display: block;">Contents</h2>
+        <div>
+            <ul style="padding: 0px; margin: 0px 0px 20px 23px; list-style: square">
+                <li><a href="#1" style="color: #005fce; text-decoration: none;">Configuramos las variables simb&oacute;licas</a></li>
+                <li><a href="#2" style="color: #005fce; text-decoration: none;">Definimos la funciones M(x,y)dx and N(x,y)dy</a></li>
+                <li><a href="#3" style="color: #005fce; text-decoration: none;">PASO 1: Determinamos si es exacta</a></li>
+                <li><a href="#4" style="color: #005fce; text-decoration: none;">PASO 2: Integramos para obtener f(x,y)</a></li>
+                <li><a href="#5" style="color: #005fce; text-decoration: none;">PASO 3: Igualamos f(x,y) = C</a></li>
+                <li><a href="#6" style="color: #005fce; text-decoration: none;">C&Oacute;DIGO COMPLETO</a></li>
+            </ul>
+        </div>
+
+        <!--CONFIGURAMOS LAS VARIABLES SIMBÓLICAS-->
+        <h2 id="1" style="padding: 0px; margin: 0px 0px 8px; font-family: Arial, Helvetica, sans-serif; font-size: 1.2em; color: #000; font-weight: bold; line-height: 140%; border-bottom: 1px solid #d6d4d4; display: block;">Configuramos las variables simb&oacute;licas</h2>
+
+        <pre class="codeinput" style="font-size: 12px; margin: 0px 0px 20px; padding: 10px; border: 1px solid #d3d3d3; background: #f7f7f7;word-wrap: break-word;">clc, clear <span class="string">all</span>;
+syms <span class="string">x</span> <span class="string">y</span> <span class="string">c</span>;
+</pre>
+
+        <!--DEFINIMOS LA FUNCION-->
+        <h2 id="2" style="padding: 0px; margin: 0px 0px 8px; font-family: Arial, Helvetica, sans-serif; font-size: 1.2em; color: #000; font-weight: bold; line-height: 140%; border-bottom: 1px solid #d6d4d4; display: block;">Definimos la funciones M(x,y)dx and N(x,y)dy</h2>
+        
+        <pre class="codeinput" style="font-size: 12px; margin: 0px 0px 20px; padding: 10px; border: 1px solid #d3d3d3; background: #f7f7f7;word-wrap: break-word;">M = 2*x+y;
+N = x-3*y;
+</pre>
+
+        <!--PASO 1-->
+        <h2 id="3" style="padding: 0px; margin: 0px 0px 8px; font-family: Arial, Helvetica, sans-serif; font-size: 1.2em; color: #000; font-weight: bold; line-height: 140%; border-bottom: 1px solid #d6d4d4; display: block;">PASO 1: Determinamos si es exacta</h2>
+        <pre class="codeinput" style="font-size: 12px; margin: 0px 0px 20px; padding: 10px; border: 1px solid #d3d3d3; background: #f7f7f7;word-wrap: break-word;">exacta = diff(M,<span class="string">'y'</span>) - diff(N,<span class="string">'x'</span>);
+
+<span class="keyword" style="color: #0000FF">if</span> exacta ~= 0
+    disp(<span class="string">'La E.D. No es exacta'</span>);
+<span class="keyword" style="color: #0000FF">else</span>
+    disp(<span class="string">'La E.D. es exacta'</span>);
+<span class="keyword" style="color: #0000FF">end</span>
+</pre>
+        <pre class="codeoutput" style="font-size: 12px; margin: 0px 0px 20px; padding: 10px 11px; margin: 0px 0px 20px; color: #4c4c4c; word-wrap: break-word;">La E.D. es exacta
+</pre>
+
+        <!--PASO 2-->
+        <h2 id="4" style="padding: 0px; margin: 0px 0px 8px; font-family: Arial, Helvetica, sans-serif; font-size: 1.2em; color: #000; font-weight: bold; line-height: 140%; border-bottom: 1px solid #d6d4d4; display: block;">PASO 2: Integramos para obtener f(x,y)</h2>
+        <pre class="codeinput" style="font-size: 12px; margin: 0px 0px 20px; padding: 10px; border: 1px solid #d3d3d3; background: #f7f7f7;word-wrap: break-word;">    f1 = int(M,<span class="string">'x'</span>); <span class="comment" style="color: #228B22">% integramos M(x,y)dx respecto a x</span>
+    fy = diff(f1,<span class="string">'y'</span>); <span class="comment" style="color: #228B22">% derivamos f(x,y) respecto a 'y'</span>
+    Gy = N - fy; <span class="comment" style="color: #228B22">% obtenemos g'(y)</span>
+    G = int(Gy, <span class="string">'y'</span>); <span class="comment" style="color: #228B22" >% integramos g'(y)</span>
+    f = f1 + G; <span class="comment" style="color: #228B22">% tenemos f(x,y)</span>
+</pre>
+
+
+        <!--PASO 3-->
+        <h2 id="5" style="padding: 0px; margin: 0px 0px 8px; font-family: Arial, Helvetica, sans-serif; font-size: 1.2em; color: #000; font-weight: bold; line-height: 140%; border-bottom: 1px solid #d6d4d4; display: block;">PASO 3: Igualamos f(x,y) = C</h2>
+        <pre class="codeinput" style="font-size: 12px; margin: 0px 0px 20px; padding: 10px; border: 1px solid #d3d3d3; background: #f7f7f7;word-wrap: break-word;">    f = f - c
+</pre>
+        <pre class="codeoutput" style="font-size: 12px; margin: 0px 0px 20px; padding: 10px 11px; margin: 0px 0px 20px; color: #4c4c4c; word-wrap: break-word;">
+f =
+ 
+x*(x + y) - c - (3*y^2)/2
+ 
+</pre>
+
+        <!--CODIGO COMPLETO-->
+        <h2 id="6" style="padding: 0px; margin: 0px 0px 8px; font-family: Arial, Helvetica, sans-serif; font-size: 1.2em; color: #000; font-weight: bold; line-height: 140%; border-bottom: 1px solid #d6d4d4; display: block;">C&Oacute;DIGO COMPLETO</h2>
+        <pre class="codeinput" style="font-size: 12px; margin: 0px 0px 20px; padding: 10px; border: 1px solid #d3d3d3; background: #f7f7f7;word-wrap: break-word;">clc, clear <span class="string">all</span>;
+syms <span class="string">x</span> <span class="string">y</span> <span class="string">c</span>;
+
+<span class="comment" style="color: #228B22">% PASO 1: Definimos la funciones M(x,y)dx and N(x,y)dy</span>
+M = 2*x+y;
+N = x-3*y;
+<span class="comment" style="color: #228B22">% Determinamos si es exacta</span>
+exacta = diff(M,<span class="string">'y'</span>) - diff(N,<span class="string">'x'</span>);
+
+<span class="keyword" style="color: #0000FF">if</span> exacta ~= 0
+    disp(<span class="string">'La E.D. No es exacta'</span>);
+<span class="keyword" style="color: #0000FF">else</span>
+    disp(<span class="string">'La E.D. es exacta'</span>);
+    <span class="comment" style="color: #228B22">% PASO 2: Integramos para obtener f(x,y)</span>
+    f1 = int(M,<span class="string">'x'</span>); <span class="comment" style="color: #228B22">% integramos M(x,y)dx respecto a x</span>
+    fy = diff(f1,<span class="string">'y'</span>); <span class="comment" style="color: #228B22">% derivamos f(x,y) respecto a 'y'</span>
+    Gy = N - fy; <span class="comment" style="color: #228B22">% obtenemos g'(y)</span>
+    G = int(Gy, <span class="string">'y'</span>); <span class="comment" style="color: #228B22">% integramos g'(y)</span>
+    f = f1 + G; <span class="comment" style="color: #228B22">% tenemos f(x,y)</span>
+
+    <span class="comment" style="color: #228B22">% PASO 3: Igualamos f(x,y) = C</span>
+    f = f - c
+<span class="keyword" style="color: #0000FF">end</span>
+</pre>
+        <pre class="codeoutput" style="font-size: 12px; margin: 0px 0px 20px; padding: 10px 11px; margin: 0px 0px 20px; color: #4c4c4c; word-wrap: break-word;">La E.D. es exacta
+ 
+f =
+ 
+x*(x + y) - c - (3*y^2)/2
+ 
+</pre>
+        <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg;
+                R2018a</a><br></p>
+    </div>
+</body>
+
+</html>
