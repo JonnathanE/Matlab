@@ -1,95 +1,426 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
 
-<!DOCTYPE html
-  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html><head>
-      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-   <!--
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <!--
 This HTML was auto-generated from MATLAB code.
 To make changes, update the MATLAB code and republish this document.
-      --><title>ED_Exactas_01_Entrega</title><meta name="generator" content="MATLAB 9.4"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2021-05-27"><meta name="DC.source" content="ED_Exactas_01_Entrega.m"><style type="text/css">
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+      -->
+    <title>ED_Exactas_01_Entrega</title>
+    <meta name="generator" content="MATLAB 9.4">
+    <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/">
+    <meta name="DC.date" content="2021-05-27">
+    <meta name="DC.source" content="ED_Exactas_01_Entrega.m">
+    <style type="text/css">
+        html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        font,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent
+        }
 
-html { min-height:100%; margin-bottom:1px; }
-html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
-html body td { vertical-align:top; text-align:left; }
+        body {
+            line-height: 1
+        }
 
-h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
-h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
-h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+        ol,
+        ul {
+            list-style: none
+        }
 
-a { color:#005fce; text-decoration:none; }
-a:hover { color:#005fce; text-decoration:underline; }
-a:visited { color:#004aa0; text-decoration:none; }
+        blockquote,
+        q {
+            quotes: none
+        }
 
-p { padding:0px; margin:0px 0px 20px; }
-img { padding:0px; margin:0px 0px 20px; border:none; }
-p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none
+        }
 
-ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
-ul li { padding:0px; margin:0px 0px 7px 0px; }
-ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
-ul li ol li { list-style:decimal; }
-ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
-ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
-ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
-ol li ol li { list-style-type:lower-alpha; }
-ol li ul { padding-top:7px; }
-ol li ul li { list-style:square; }
+        :focus {
+            outine: 0
+        }
 
-.content { font-size:1.2em; line-height:140%; padding: 20px; }
+        ins {
+            text-decoration: none
+        }
 
-pre, code { font-size:12px; }
-tt { font-size: 1.2em; }
-pre { margin:0px 0px 20px; }
-pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
-pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
-pre.error { color:red; }
+        del {
+            text-decoration: line-through
+        }
 
-@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
 
-span.keyword { color:#0000FF }
-span.comment { color:#228B22 }
-span.string { color:#A020F0 }
-span.untermstring { color:#B20000 }
-span.syscmd { color:#B28C00 }
+        html {
+            min-height: 100%;
+            margin-bottom: 1px;
+        }
 
-.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
-.footer p { margin:0px; }
-.footer a { color:#878787; }
-.footer a:hover { color:#878787; text-decoration:underline; }
-.footer a:visited { color:#878787; }
+        html body {
+            height: 100%;
+            margin: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 10px;
+            color: #000;
+            line-height: 140%;
+            background: #fff none;
+            overflow-y: scroll;
+        }
 
-table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
-table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+        html body td {
+            vertical-align: top;
+            text-align: left;
+        }
 
+        h1 {
+            padding: 0px;
+            margin: 0px 0px 25px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.5em;
+            color: #d55000;
+            line-height: 100%;
+            font-weight: normal;
+        }
 
+        h2 {
+            padding: 0px;
+            margin: 0px 0px 8px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.2em;
+            color: #000;
+            font-weight: bold;
+            line-height: 140%;
+            border-bottom: 1px solid #d6d4d4;
+            display: block;
+        }
 
+        h3 {
+            padding: 0px;
+            margin: 0px 0px 5px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 1.1em;
+            color: #000;
+            font-weight: bold;
+            line-height: 140%;
+        }
 
+        a {
+            color: #005fce;
+            text-decoration: none;
+        }
 
-  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#1">Configuramos las variables simb&oacute;licas</a></li><li><a href="#2">Definimos la funciones M(x,y)dx and N(x,y)dy</a></li><li><a href="#3">PASO 1: Determinamos si es exacta</a></li><li><a href="#4">PASO 2: Integramos para obtener f(x,y)</a></li><li><a href="#5">PASO 3: Igualamos f(x,y) = C</a></li><li><a href="#6">C&Oacute;DIGO COMPLETO</a></li></ul></div><h2 id="1">Configuramos las variables simb&oacute;licas</h2><pre class="codeinput">clc, clear <span class="string">all</span>;
+        a:hover {
+            color: #005fce;
+            text-decoration: underline;
+        }
+
+        a:visited {
+            color: #004aa0;
+            text-decoration: none;
+        }
+
+        p {
+            padding: 0px;
+            margin: 0px 0px 20px;
+        }
+
+        img {
+            padding: 0px;
+            margin: 0px 0px 20px;
+            border: none;
+        }
+
+        p img,
+        pre img,
+        tt img,
+        li img,
+        h1 img,
+        h2 img {
+            margin-bottom: 0px;
+        }
+
+        ul {
+            padding: 0px;
+            margin: 0px 0px 20px 23px;
+            list-style: square;
+        }
+
+        ul li {
+            padding: 0px;
+            margin: 0px 0px 7px 0px;
+        }
+
+        ul li ul {
+            padding: 5px 0px 0px;
+            margin: 0px 0px 7px 23px;
+        }
+
+        ul li ol li {
+            list-style: decimal;
+        }
+
+        ol {
+            padding: 0px;
+            margin: 0px 0px 20px 0px;
+            list-style: decimal;
+        }
+
+        ol li {
+            padding: 0px;
+            margin: 0px 0px 7px 23px;
+            list-style-type: decimal;
+        }
+
+        ol li ol {
+            padding: 5px 0px 0px;
+            margin: 0px 0px 7px 0px;
+        }
+
+        ol li ol li {
+            list-style-type: lower-alpha;
+        }
+
+        ol li ul {
+            padding-top: 7px;
+        }
+
+        ol li ul li {
+            list-style: square;
+        }
+
+        .content {
+            font-size: 1.2em;
+            line-height: 140%;
+            padding: 20px;
+        }
+
+        pre,
+        code {
+            font-size: 12px;
+        }
+
+        tt {
+            font-size: 1.2em;
+        }
+
+        pre {
+            margin: 0px 0px 20px;
+        }
+
+        pre.codeinput {
+            padding: 10px;
+            border: 1px solid #d3d3d3;
+            background: #f7f7f7;
+        }
+
+        pre.codeoutput {
+            padding: 10px 11px;
+            margin: 0px 0px 20px;
+            color: #4c4c4c;
+        }
+
+        pre.error {
+            color: red;
+        }
+
+        @media print {
+
+            pre.codeinput,
+            pre.codeoutput {
+                word-wrap: break-word;
+                width: 100%;
+            }
+        }
+
+        span.keyword {
+            color: #0000FF
+        }
+
+        span.comment {
+            color: #228B22
+        }
+
+        span.string {
+            color: #A020F0
+        }
+
+        span.untermstring {
+            color: #B20000
+        }
+
+        span.syscmd {
+            color: #B28C00
+        }
+
+        .footer {
+            width: auto;
+            padding: 10px 0px;
+            margin: 25px 0px 0px;
+            border-top: 1px dotted #878787;
+            font-size: 0.8em;
+            line-height: 140%;
+            font-style: italic;
+            color: #878787;
+            text-align: left;
+            float: none;
+        }
+
+        .footer p {
+            margin: 0px;
+        }
+
+        .footer a {
+            color: #878787;
+        }
+
+        .footer a:hover {
+            color: #878787;
+            text-decoration: underline;
+        }
+
+        .footer a:visited {
+            color: #878787;
+        }
+
+        table th {
+            padding: 7px 5px;
+            text-align: left;
+            vertical-align: middle;
+            border: 1px solid #d6d4d4;
+            font-weight: bold;
+        }
+
+        table td {
+            padding: 7px 5px;
+            text-align: left;
+            vertical-align: top;
+            border: 1px solid #d6d4d4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h2>Contents</h2>
+        <div>
+            <ul>
+                <li><a href="#1">Configuramos las variables simb&oacute;licas</a></li>
+                <li><a href="#2">Definimos la funciones M(x,y)dx and N(x,y)dy</a></li>
+                <li><a href="#3">PASO 1: Determinamos si es exacta</a></li>
+                <li><a href="#4">PASO 2: Integramos para obtener f(x,y)</a></li>
+                <li><a href="#5">PASO 3: Igualamos f(x,y) = C</a></li>
+                <li><a href="#6">C&Oacute;DIGO COMPLETO</a></li>
+            </ul>
+        </div>
+        <h2 id="1">Configuramos las variables simb&oacute;licas</h2>
+        <pre class="codeinput">clc, clear <span class="string">all</span>;
 syms <span class="string">x</span> <span class="string">y</span> <span class="string">c</span>;
-</pre><h2 id="2">Definimos la funciones M(x,y)dx and N(x,y)dy</h2><pre class="codeinput">M = 2*x+y;
+</pre>
+        <h2 id="2">Definimos la funciones M(x,y)dx and N(x,y)dy</h2>
+        <pre class="codeinput">M = 2*x+y;
 N = x-3*y;
-</pre><h2 id="3">PASO 1: Determinamos si es exacta</h2><pre class="codeinput">exacta = diff(M,<span class="string">'y'</span>) - diff(N,<span class="string">'x'</span>);
+</pre>
+        <h2 id="3">PASO 1: Determinamos si es exacta</h2>
+        <pre class="codeinput">exacta = diff(M,<span class="string">'y'</span>) - diff(N,<span class="string">'x'</span>);
 
 <span class="keyword">if</span> exacta ~= 0
     disp(<span class="string">'La E.D. No es exacta'</span>);
 <span class="keyword">else</span>
     disp(<span class="string">'La E.D. es exacta'</span>);
 <span class="keyword">end</span>
-</pre><pre class="codeoutput">La E.D. es exacta
-</pre><h2 id="4">PASO 2: Integramos para obtener f(x,y)</h2><pre class="codeinput">    f1 = int(M,<span class="string">'x'</span>); <span class="comment">% integramos M(x,y)dx respecto a x</span>
+</pre>
+        <pre class="codeoutput">La E.D. es exacta
+</pre>
+        <h2 id="4">PASO 2: Integramos para obtener f(x,y)</h2>
+        <pre class="codeinput">    f1 = int(M,<span class="string">'x'</span>); <span class="comment">% integramos M(x,y)dx respecto a x</span>
     fy = diff(f1,<span class="string">'y'</span>); <span class="comment">% derivamos f(x,y) respecto a 'y'</span>
     Gy = N - fy; <span class="comment">% obtenemos g'(y)</span>
     G = int(Gy, <span class="string">'y'</span>); <span class="comment">% integramos g'(y)</span>
     f = f1 + G; <span class="comment">% tenemos f(x,y)</span>
-</pre><h2 id="5">PASO 3: Igualamos f(x,y) = C</h2><pre class="codeinput">    f = f - c
-</pre><pre class="codeoutput"> 
+</pre>
+        <h2 id="5">PASO 3: Igualamos f(x,y) = C</h2>
+        <pre class="codeinput">    f = f - c
+</pre>
+        <pre class="codeoutput">
 f =
  
 x*(x + y) - c - (3*y^2)/2
  
-</pre><h2 id="6">C&Oacute;DIGO COMPLETO</h2><pre class="codeinput">clc, clear <span class="string">all</span>;
+</pre>
+        <h2 id="6">C&Oacute;DIGO COMPLETO</h2>
+        <pre class="codeinput">clc, clear <span class="string">all</span>;
 syms <span class="string">x</span> <span class="string">y</span> <span class="string">c</span>;
 
 <span class="comment">% PASO 1: Definimos la funciones M(x,y)dx and N(x,y)dy</span>
@@ -112,13 +443,18 @@ exacta = diff(M,<span class="string">'y'</span>) - diff(N,<span class="string">'
     <span class="comment">% PASO 3: Igualamos f(x,y) = C</span>
     f = f - c
 <span class="keyword">end</span>
-</pre><pre class="codeoutput">La E.D. es exacta
+</pre>
+        <pre class="codeoutput">La E.D. es exacta
  
 f =
  
 x*(x + y) - c - (3*y^2)/2
  
-</pre><p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2018a</a><br></p></div><!--
+</pre>
+        <p class="footer"><br><a href="https://www.mathworks.com/products/matlab/">Published with MATLAB&reg;
+                R2018a</a><br></p>
+    </div>
+    <!--
 ##### SOURCE BEGIN #####
 %% Configuramos las variables simbólicas
 clc, clear all;
@@ -171,4 +507,7 @@ end
 
 
 ##### SOURCE END #####
---></body></html>
+-->
+</body>
+
+</html>
