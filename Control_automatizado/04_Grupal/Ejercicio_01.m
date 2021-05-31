@@ -1,3 +1,8 @@
+% EJERCICIOS DE PROGRAMACIÓN - SCRIPTS EN MATLAB PARA RESOLVER E.D
+ 
+% Autores: Camila Cueva, Jonnathan Espinoza y Edgar Sánchez
+% Fecha: 03 de junio de 2021
+
 % EJERCICIO 01
 % Representar un campo direccional de la ecuación diferencial dy/dx = 2x
 % Sobre la misma gráfica superponer:
