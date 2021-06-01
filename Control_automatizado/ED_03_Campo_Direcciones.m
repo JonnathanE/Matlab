@@ -1,5 +1,7 @@
 % Resolución de un Campo de Direcciones
 
+% FECHA: 18 de Mayo 2021
+
 % ED: y' = sin(x+y)
 clc, clear all;
 
