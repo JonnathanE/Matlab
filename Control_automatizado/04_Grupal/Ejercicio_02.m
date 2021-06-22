@@ -4,6 +4,14 @@
 %   Fecha: 03 de junio de 2021
 
 % EJERCICIO 02:
+
+% Representar un campo direccional de la ecuación diferencial ??/?? = ???(x)
+% Sobre la misma gráfica suponer:
+%   - La gráfica de la solución de la ecuación diferencial para un valor inicial de
+%       ?(0) = 1.
+%   - La gráfica de la condición inicial (punto).
+
+
 %   y'=sen(x) Condición inicial: y(0)=1
 
 clc, clear all;

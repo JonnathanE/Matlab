@@ -6,14 +6,9 @@
 % Ejercicio 3
 % Resolver la ecuación diferencial de primer orden y' = sen x, con valor 
 % inicial: y(0) = 2.
- 
-% a. Use el método de separación de variables en Matlab 
-
-% b. En el mismo script realice la solución de la ecuación diferencial 
-% con dsolve.
-
-% c. En el mismo script genere dos gráficas independientes que muestre 
-% la solución del literal a y b
+%   a. Use el método de separación de variables en Matlab 
+%   b. En el mismo script realice la solución de la ecuación diferencial con dsolve.
+%   c. En el mismo script genere dos gráficas independientes que muestre la solución del literal a y b
 
 clear all; clc;
 syms x y c

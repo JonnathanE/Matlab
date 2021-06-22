@@ -4,6 +4,7 @@
 %   Fecha: 03 de junio de 2021
 
 % EJERCICIO 04:
+% Realice un script en Matlab que permita encontrar la solución implícita de la Ecuación Diferencial Exacta:
 %   (2r sen(t))dr + (2t+ (r^2)cos(t))dt=0
 
 clc, clear all;
